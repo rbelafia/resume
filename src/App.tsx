@@ -12,7 +12,7 @@ const frenchContext = {
     links: {
         about: "Qui suis-je ?",
         skills: "Compétences",
-        experience: "Experiences professionelles",
+        experience: "Experiences professionnelles",
         education: "Formation"
     }
 }

@@ -94,12 +94,12 @@ const englishWorkExperiences: WorkExperience[] = [
 const frenchWorkExperiences: WorkExperience[] = [
     {
         title: "Ingénieur de recherche et de formation",
-        location: "IRISA – équipe DiverSE (en lien avec Jamespot)",
+        location: "IRISA – Equipe DiverSE (en lien avec Jamespot)",
         description: [
             "Etude de la scalabilité des chaînes d’intégration et déploiement continus dans un contexte de massification des données, en se basant sur les pratiques de Jamespot",
             "Aide à l’amélioration de la chaîne d’intégration et déploiement continus de Jamespot",
             "Mise en place d’un outil de recommandation de pratiques DevOps adaptées à un projet " +
-            "logiciel, en comparant un ensemble de métriques à celles obtenues sur large corpus de " +
+            "logiciel, en comparant un ensemble de métriques à celles obtenues sur un large corpus de " +
             "projets open-source",
             "Encadrement de travaux pratiques de Vérification et Validation à l’Université de Rennes"
         ],
@@ -180,7 +180,7 @@ const englishContext = {
 }
 
 const frenchContext = {
-    title: "Experiences professionelles",
+    title: "Experiences professionnelles",
     experiences: frenchWorkExperiences,
     more: "Montrer plus",
     less: "Montrer moins"

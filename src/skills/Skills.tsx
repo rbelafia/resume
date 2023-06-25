@@ -69,7 +69,7 @@ const englishTechnicalSkills: Skill[] = [
                 ]
             },
             {
-                subSkill: "Development environment",
+                subSkill: "Development environnement",
                 tools: [
                     "Git",
                     "Linux",
@@ -223,7 +223,7 @@ const frenchTechnicalSkills: Skill[] = [
                 ]
             },
             {
-                subSkill: "Environement de développement",
+                subSkill: "environnement de développement",
                 tools: [
                     "Git",
                     "Linux",
@@ -405,11 +405,11 @@ const englishContext = {
 const frenchContext = {
     title: "Compétences",
     workExperiences: {
-        title: "Compétences informatique",
+        title: "Compétences informatiques",
         skills: frenchTechnicalSkills
     },
     otherExperiences: {
-        title: "Autre compétences",
+        title: "Autres compétences",
         music: {
             title: "Production musicale",
             subSkills: [
