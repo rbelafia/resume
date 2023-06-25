@@ -10,14 +10,10 @@
 
 .education-date {
     padding-right: 1em;
-    width: 5em;
-    text-align: right;
 }
 
 .education-details {
-    border-left: 1px solid black;
-    padding-left: 1em;
-    width: 50em;
+    max-width: min(50em, 100%);
 }
 
 h3.education-title {
@@ -48,11 +44,23 @@ ul.education-topics {
 }
 
 .education-logo {
-    height: 1.5em;
+    height: 1.2em;
     margin-left: 0.5em;
 }
 
 .education-title-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    background-color: #d7e7f0;
+    padding-left: 0.5em;
+}
+
+.education-description {
+
+}
+
+.education-sub-details {
+    padding: 0.5em;
+    padding-top: 0.2em;
 }

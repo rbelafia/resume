@@ -64,27 +64,31 @@ function Education({reference}: {reference: MutableRefObject<HTMLDivElement | un
         {
             infos.map(({date, description, location, title, topics, logoName}) => (
                 <div className="education-info">
-                        <div className="education-date">
-                            {
-                                typeof date === "number" ?
-                                    <span>{date}</span> :
-                                    <span>{date[0]} – {date[1]}</span>
-                            }
-                        </div>
+
                         <div className="education-details">
                             <div className="education-title-container">
+                                <div className="education-date">
+                                    {
+                                        typeof date === "number" ?
+                                            <span>{date}</span> :
+                                            <span>{date[0]} – {date[1]}</span>
+                                    }
+                                </div>
                                 <h3 className="education-title">{title}</h3>
                                 <img className="education-logo" src={GetLogo(logoName)} alt="INSA Rennes logo"/>
                             </div>
-                            <div className="education-location">
-                                <MdLocationOn/>
-                                <span>{location}</span>
-                            </div>
-                            <p>{description}</p>
+                            <div className="education-sub-details">
+                                <div className="education-location">
+                                    <MdLocationOn/>
+                                    <span>{location}</span>
+                                </div>
+                                <p className="education-description">{description}</p>
 
-                            <ul className="education-topics">
-                                {topics.map(tag => <li className="education-topic">{tag}</li>)}
-                            </ul>
+                                <ul className="education-topics">
+                                    {topics.map(tag => <li className="education-topic">{tag}</li>)}
+                                </ul>
+                            </div>
+
                         </div>
                 </div>
             ))

@@ -1,7 +1,7 @@
-import React, {LegacyRef, MutableRefObject} from "react";
+import React, {MutableRefObject} from "react";
 import "./About.css"
 import {FaRegEnvelope} from "react-icons/fa";
-import {SiGithub, SiLinkedin} from "react-icons/si";
+import {SiGithub} from "react-icons/si";
 import {TfiLinkedin} from "react-icons/tfi";
 
 function About({reference}: {reference: MutableRefObject<HTMLDivElement | undefined>}) {
@@ -30,7 +30,8 @@ function About({reference}: {reference: MutableRefObject<HTMLDivElement | undefi
             <a className="about-logo" href="https://www.linkedin.com/in/romain-belafia/">
                 <TfiLinkedin/>
             </a>
-            <a className="about-logo" style={{marginLeft: "0.5em"}}><SiGithub/></a>
+            <a className="about-logo" href="https://github.com/rbelafia"
+               style={{marginLeft: "0.5em"}}><SiGithub/></a>
         </div>
 
     </section>

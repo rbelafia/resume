@@ -13,6 +13,15 @@
     grid-gap: 1em;
 }
 
+@media only screen and (max-width: 480px) {
+    .skills-divs {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 1em;
+    }
+}
+
+
 .skills-div {
     color: black;
 }
