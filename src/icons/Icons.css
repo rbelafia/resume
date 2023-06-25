@@ -10,7 +10,7 @@
     display: inline-block;
 }
 
-.skills-tool > svg + span {
+.skills-tool > * + span {
     opacity: 0;
     visibility: hidden;
     background-color: #20455a;
@@ -29,8 +29,14 @@
 }
 
 
-.skills-tool > svg:hover + span {
+.skills-tool > *:hover + span {
     opacity: 1;
     visibility: visible;
     transition: visibility 0s, opacity 0.2s;
+}
+
+.icon-unknown {
+    font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-style: initial;
+    margin-right: 0.3em;
 }

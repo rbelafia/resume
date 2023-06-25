@@ -1,8 +1,8 @@
 :root {
-  font-family: 'Saira ExtraCondensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'Saira ExtraCondensed', Saira, 'Cantarell', Verdana, Geneva, -apple-system,  BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   line-height: 1.5;
   font-weight: 400;
-  font-size: 1vh ;
+  font-size: 1em;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);

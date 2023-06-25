@@ -37,6 +37,38 @@ ul.nav-list {
   width: 5em;
   border: 0.1em solid #418ab3;
 }
+
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+}
+
+.app-main > section {
+  color: black;
+  border-top: solid 1px #20455a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  min-height: 100vh;
+  font-size: 1.5em;
+  box-sizing: border-box;
+  padding: 3em;
+  flex-shrink: 0;
+}
+
+.app-main > section:first-child {
+  border-top: none;
+}
+
+.app-main > section > h1 {
+  margin-bottom: 0.5em;
+}
+
 @media only screen and (max-width: 480px) {
   #root {
     flex-flow: column;
@@ -59,39 +91,16 @@ ul.nav-list {
   }
 
   .me-container > img {
-    height: 1em;
-    width: 1em;
+    height: 0;
+    width: 0;
+    border: none;
+  }
+
+
+  .app-main > section {
+    padding: 1em;
   }
 }
-
-.app-main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  overflow-y: scroll;
-
-}
-
-.app-main > section {
-  color: black;
-  border-top: solid 1px #20455a;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  min-height: 100vh;
-  font-size: 1.5em;
-  box-sizing: border-box;
-  padding: 3em;
-  flex-shrink: 0;
-}
-
-.app-main > section > h1 {
-  margin-bottom: 0.5em;
-}
-
-
 
 ul.nav-list > li {
   cursor: pointer;

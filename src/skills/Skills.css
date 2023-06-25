@@ -9,8 +9,9 @@
 
 .skills-divs {
     display: grid;
-    grid-template-columns: repeat(4, 20%);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
+    overflow-x: scroll;
 }
 
 @media only screen and (max-width: 480px) {
@@ -70,6 +71,8 @@ li.skills-tool > svg:hover {
     padding-right: 0.5em;
     padding-left: 0.5em;
     text-transform: uppercase;
+    white-space: nowrap;
+
 }
 
 .skill-tools {
@@ -80,3 +83,16 @@ li.skills-tool > svg:hover {
     margin-right: 0.5em;
 }
 
+.subskill {
+    white-space: nowrap;
+}
+
+.skills-language {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.skills-language-sub {
+    white-space: nowrap;
+}

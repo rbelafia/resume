@@ -1,28 +1,5 @@
 import React, {MutableRefObject} from "react";
 import "./Skills.css"
-import {FaJava, FaJs, FaPhp, FaPython} from "react-icons/fa";
-import {
-    SiAbletonlive,
-    SiAmazonaws,
-    SiAngular, SiAnsible,
-    SiC, SiCircle, SiCircleci,
-    SiCplusplus, SiCurl, SiCypress,
-    SiDjango, SiDocker, SiEclipseche, SiEclipseide, SiFastapi, SiGit, SiGithubactions, SiGitlab, SiGrafana, SiGraphql,
-    SiJavascript, SiJenkins, SiJest, SiJetbrains, SiJunit5, SiJupyter,
-    SiKotlin, SiKubernetes, SiLinux, SiMariadb, SiMysql, SiNumpy, SiPandas,
-    SiPhp, SiPostgresql, SiPrometheus, SiProtools,
-    SiQuarkus,
-    SiR, SiReact, SiSelenium, SiSonarqube,
-    SiSpring, SiSqlite, SiTerraform,
-    SiTypescript, SiVisualstudiocode
-} from "react-icons/si";
-import {VscTerminalBash} from "react-icons/vsc";
-import {DiRuby} from "react-icons/di";
-import {IoPieChart} from "react-icons/io5";
-import {TbBrandPython, TbTestPipe} from "react-icons/tb";
-import {TiPencil} from "react-icons/ti";
-import {LuDna} from "react-icons/lu";
-import {BiCodeCurly} from "react-icons/bi";
 import {GB, FR} from "country-flag-icons/react/3x2";
 import {ES} from "country-flag-icons/react/3x2";
 import Icons from "../icons/Icons";
@@ -51,7 +28,7 @@ function SkillsAux({title, skills}: {title: string, skills: Skill[]}) {
                         <div className="skill-tools">
                             {subSkills.map(({subSkill, tools}) => (
                                 <div className="skills-one dot">
-                                    <h4>{subSkill}</h4>
+                                    <h4 className="subskill">{subSkill}</h4>
                                     <ul>
                                         {
                                             tools.map((tool) => <Icons toolName={tool}/>)
@@ -227,14 +204,13 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
         <h1>Skills</h1>
         <div>
             {<SkillsAux title={"Technical skills"} skills={technicalSkills}/>}
-        </div>
-        <div><h2>Other skills</h2>
+            <h2 style={{marginTop: "1em"}}>Other skills</h2>
             <div className="skills-divs">
                 <div className="skills-div">
                     <h3 className="skill-name">Music production</h3>
                     <div className="skill-tools">
                         <div className="skills-one dot">
-                            <h4>Digital audio workstations</h4>
+                            <h4 className="subskill">Digital audio workstations</h4>
                             <ul>
                                 <Icons toolName={"Ableton"}/>
                                 <Icons toolName={"Pro tools"}/>
@@ -246,11 +222,13 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
                     <h3 className="skill-name">Languages</h3>
                     <div className="skill-tools">
                         <div className="skills-one">
-                            <div style={{display: "flex", flexDirection: "row"}}>
+                            <div className="skills-language">
                                 <div className="icon-country">
                                     <FR title="French"/>
                                 </div>
-                                <h4><span style={{fontWeight: "bold"}}>French</span> - Native speaker</h4>
+                                <h4 className="skills-language-sub">
+                                    <span style={{fontWeight: "bold"}}>French</span> - Native speaker
+                                </h4>
                             </div>
                         </div>
                         <div className="skills-one">

@@ -122,14 +122,17 @@ function Experience({reference}: {reference: MutableRefObject<HTMLDivElement | u
                                     <MdLocationOn/>
                                     <span>{location}</span>
                                 </div>
-                                {typeof description === "string" ?
-                                    <p className="experience-description">{description}</p> :
-                                    <ul className="experience-description">{description.map(line => <li>{line}</li>)}
-                                    </ul>
+                                {
+                                    typeof description === "string" ?
+                                        <p className="experience-description">{description}</p> :
+                                        <ul className="experience-description">
+                                            {description.map(line => <li>{line}</li>)}
+                                        </ul>
                                 }
 
                                 <ul className="experience-tags">
                                     {tags.map(tag => <li className="experience-tag">{tag}</li>)}
+
                                 </ul>
                                 <ul className="experience-tools">
                                     {tools.map(tool => <Icons toolName={tool}/>)}
