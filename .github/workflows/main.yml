@@ -1,0 +1,19 @@
+name: "Build and deploy my resume on Github pages"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: "Setup Node.js environment"
+        uses: actions/setup-node@v2.5.2
+      - name: "Build"
+        run: npm run build
