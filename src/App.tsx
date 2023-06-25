@@ -1,5 +1,5 @@
-import {LegacyRef, useRef, useState} from 'react'
-import reactLogo from './assets/react.svg'
+import {useRef} from 'react'
+import meCropped from './assets/me_cropped.jpg'
 import './App.css'
 import About from "./about/About";
 import Experience from "./experience/Experience";
@@ -13,14 +13,10 @@ function App() {
     const aboutRef = useRef<HTMLDivElement>();
 
     // @ts-ignore
-    const links = [
-    ]
-
-    // @ts-ignore
     return <>
         <nav>
             <div className="me-container">
-                <img src="/me_cropped.jpg" alt="Romain Belafia"/>
+                <img src={meCropped} alt="Romain Belafia"/>
             </div>
             <ul className="nav-list">
                 <li onClick={() => aboutRef?.current?.scrollIntoView()}>ABOUT</li>

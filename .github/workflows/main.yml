@@ -21,7 +21,11 @@ jobs:
         run: npm install
 
       - name: "Build"
-        run: |
-          git config --global user.name "rbelafia"
-          git config --global user.email "rbelafia@gmail.com"
-          npm run deploy
+        run: npm run build
+
+      - name: "deploy to gh-pages"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./dist
+

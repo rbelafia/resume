@@ -1,7 +1,8 @@
 import React, {MutableRefObject} from "react";
 import "./Education.css"
 import {MdLocationOn} from "react-icons/md";
-import Icons from "../icons/Icons";
+import insaPicture from "../assets/insa.png"
+import univPicture from "../assets/ur1.png"
 
 interface EducationInfo {
     title: string,
@@ -29,7 +30,7 @@ const infos: EducationInfo[] = [
             "Science and Technique for the engineer",
             "Music study"
         ],
-        logoName: "insa.png"
+        logoName: "insa"
     },
     {
         title: "Master in Computer Science as a double degree",
@@ -43,9 +44,17 @@ const infos: EducationInfo[] = [
             "Software security",
             "Software science"
         ],
-        logoName: "ur1.png"
+        logoName: "ur1"
     }
 ]
+
+function GetLogo(path: string) {
+    const pic = {
+        "insa": insaPicture,
+        "ur1": univPicture
+    }[path]
+    return pic === undefined ? insaPicture : pic
+}
 function Education({reference}: {reference: MutableRefObject<HTMLDivElement | undefined>}) {
     const ref = reference.current === undefined ? reference : reference as MutableRefObject<HTMLDivElement>
 
@@ -65,7 +74,7 @@ function Education({reference}: {reference: MutableRefObject<HTMLDivElement | un
                         <div className="education-details">
                             <div className="education-title-container">
                                 <h3 className="education-title">{title}</h3>
-                                <img className="education-logo" src={`/${logoName}`} alt="INSA Rennes logo"/>
+                                <img className="education-logo" src={GetLogo(logoName)} alt="INSA Rennes logo"/>
                             </div>
                             <div className="education-location">
                                 <MdLocationOn/>
