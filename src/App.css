@@ -78,17 +78,20 @@ ul.nav-list {
   nav {
     flex-direction: row;
     flex-shrink: 0;
-    padding: 1em;
     overflow-x: scroll;
+    flex-wrap: nowrap;
+    width: auto;
   }
 
   ul.nav-list {
     display: flex;
     flex-direction: row;
+    margin-right: 1em;
   }
 
   ul.nav-list > li {
     margin-left: 1em;
+    white-space: nowrap;
   }
 
   .me-container > img {

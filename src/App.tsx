@@ -38,17 +38,15 @@ function App() {
     // @ts-ignore
     return <>
         <nav>
-            <div>
-            <div className="me-container">
-                <img src={meCropped} alt="Romain Belafia"/>
-            </div>
-            <ul className="nav-list">
-                <li onClick={() => aboutRef?.current?.scrollIntoView()}>{context.links.about}</li>
-                <li onClick={() => skillsRef?.current?.scrollIntoView()}>{context.links.skills}</li>
-                <li onClick={() => experienceRef?.current?.scrollIntoView()}>{context.links.experience}</li>
-                <li onClick={() => educationRef?.current?.scrollIntoView()}>{context.links.education}</li>
-            </ul>
-            </div>
+                <div className="me-container">
+                    <img src={meCropped} alt="Romain Belafia"/>
+                </div>
+                <ul className="nav-list">
+                    <li onClick={() => aboutRef?.current?.scrollIntoView()}>{context.links.about}</li>
+                    <li onClick={() => skillsRef?.current?.scrollIntoView()}>{context.links.skills}</li>
+                    <li onClick={() => experienceRef?.current?.scrollIntoView()}>{context.links.experience}</li>
+                    <li onClick={() => educationRef?.current?.scrollIntoView()}>{context.links.education}</li>
+                </ul>
             <div className="app-icon-country" onClick={() => setLang(prevState => {
                 return prevState === "French" ? "English" : "French";
             })}>
