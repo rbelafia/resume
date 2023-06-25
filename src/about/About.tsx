@@ -9,7 +9,7 @@ const englishAbout = {
     presentation: "I am a French DevOps engineer with a research oriented background.\n" +
         "I am currently looking for a post as a DevOps engineer.\n\n " +
         "After getting an engineering degree at INSA Rennes with a double degress in computer science obtained at University Rennes, I worked as a research engineer at DiverSE team at IRISA.\n" +
-        "This work experience gave me an expertise on DevOps practices adapted to a Software Project.",
+        "This work experience gave me an expertise in the capacity of chosing and implementing DevOps practices adapted to a Software Project.",
     contactMe: "Contact me"
 }
 
@@ -17,7 +17,7 @@ const frenchAbout = {
     presentation: "Je suis un ingénieur DevOps français avec une formation accès vers la recherche.\n" +
         "Je suis actuellement à la recherche d'un poste d'ingénieur DevOps dans un contexte de recherche et développement.\n\n" +
         "Après avoir été diplômé à l'INSA Rennes en tant qu'ingénieur en informatique avec un double diplôme ingénieur-chercheur, j'ai travaillé en tant qu'ingénieur de recherche au sein de l'équipe DiverSE aux laboratoire de l'Irisa à Rennes.\n" +
-        "Ce travail m'a donné une expertise dans le choix et l'implémentation des pratiques DevOps adaptées à un projet logiciel.",
+        "Ce travail m'a donné une expertise dans la capacité à choisir et implémenter les pratiques DevOps adaptées à un projet logiciel.",
     contactMe: "ME CONTACTER"
 }
 
