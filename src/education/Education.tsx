@@ -1,8 +1,9 @@
-import React, {MutableRefObject} from "react";
+import React, {MutableRefObject, useContext} from "react";
 import "./Education.css"
 import {MdLocationOn} from "react-icons/md";
 import insaPicture from "../assets/insa.png"
 import univPicture from "../assets/ur1.png"
+import {LangContext} from "../App";
 
 interface EducationInfo {
     title: string,
@@ -12,7 +13,8 @@ interface EducationInfo {
     topics: string[],
     logoName: string
 }
-const infos: EducationInfo[] = [
+
+const englishInfos: EducationInfo[] = [
     {
         title: "Engineering Degree in Computer Science",
         description: "I followed a curriculum at INSA Rennes, composed of 2 year general preparatory cycle, " +
@@ -48,6 +50,51 @@ const infos: EducationInfo[] = [
     }
 ]
 
+const frenchInfos: EducationInfo[] = [
+    {
+        title: "Diplôme d'ingénieur en informatique",
+        description: "J'ai suivi un cursus d'ingénieur à l'INSA Rennes, composé de 2 années de classes préparatoires intégrées " +
+            "suivies d'un cycle ingénieur de trois ans spécialisé en informatique. Au cours de mon cursus j'ai eu l'occasion " +
+            "d'effectuer une mobilité universitaire à l'Université d'Aalborg au Danemark pendant un semestre. Durant la dernière année de mon cursus " +
+            "j'ai pu effectuer un double diplôme recherche à l'Université de Rennes. ",
+        location: "INSA Rennes",
+        date: [2016, 2021],
+        topics: [
+            "Conception logiciel",
+            "Architecture logicielle et matérielle",
+            "Données et réseaux",
+            "Media et interactions",
+            "Langages et compilation",
+            "Sciences et Techniques pour l’ingénieur",
+            "Musique étude"
+        ],
+        logoName: "insa"
+    },
+    {
+        title: "Master recherche d'informatique en double diplôme",
+        location: "University de Rennes – INSA Rennes",
+        description: "Durant la dernière année de mon cursus à l'INSA Rennes, j'ai suivi un master recherche en double diplôme avec l'Université de Rennes.",
+        date: 2021,
+        topics: [
+            "Architecture",
+            "Langages et compilation",
+            "Sécurité logicielle",
+            "Génie logicielle"
+        ],
+        logoName: "ur1"
+    }
+]
+
+const englishContext = {
+    title: "Education",
+    infos: englishInfos
+}
+
+const frenchContext = {
+    title: "Formation",
+    infos: frenchInfos
+}
+
 function GetLogo(path: string) {
     const pic = {
         "insa": insaPicture,
@@ -57,31 +104,37 @@ function GetLogo(path: string) {
 }
 function Education({reference}: {reference: MutableRefObject<HTMLDivElement | undefined>}) {
     const ref = reference.current === undefined ? reference : reference as MutableRefObject<HTMLDivElement>
+    const lang = useContext(LangContext)
 
+    const context = lang === "French" ? frenchContext : englishContext
     // @ts-ignore
     return <section ref={ref} className="education">
-        <h1>Education</h1>
+        <h1>{context.title}</h1>
         {
-            infos.map(({date, description, location, title, topics, logoName}) => (
+            context.infos.map(({date, description, location, title, topics, logoName}) => (
                 <div className="education-info">
 
                         <div className="education-details">
                             <div className="education-title-container">
-                                <div className="education-date">
-                                    {
-                                        typeof date === "number" ?
-                                            <span>{date}</span> :
-                                            <span>{date[0]} – {date[1]}</span>
-                                    }
-                                </div>
-                                <h3 className="education-title">{title}</h3>
+                                <h2>
+                                    <span className="education-date">
+                                        {
+                                            typeof date === "number" ?
+                                                <span>{date}</span> :
+                                                <span>{date[0]} – {date[1]}</span>
+                                        }
+                                    </span>
+                                    <span className="education-title">{title}</span>
+
+                                </h2>
+
                                 <img className="education-logo" src={GetLogo(logoName)} alt="INSA Rennes logo"/>
                             </div>
                             <div className="education-sub-details">
-                                <div className="education-location">
+                                <h3 className="education-location">
                                     <MdLocationOn/>
                                     <span>{location}</span>
-                                </div>
+                                </h3>
                                 <p className="education-description">{description}</p>
 
                                 <ul className="education-topics">

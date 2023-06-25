@@ -24,6 +24,7 @@ nav {
   justify-content: center;
   font-size: 1.7em;
   flex-shrink: 0;
+  width: 10em;
 
 }
 
@@ -47,7 +48,7 @@ ul.nav-list {
 }
 
 .app-main > section {
-  color: black;
+  color: #343a40;
   border-top: solid 1px #20455a;
   display: flex;
   flex-direction: column;
@@ -112,8 +113,9 @@ ul.nav-list > li:hover {
   opacity: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, nav {
   margin: 0;
+  font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 h4 {
@@ -121,3 +123,8 @@ h4 {
 }
 
 
+.app-icon-country > svg {
+  border: solid 2px white;
+  width: 1.2em;
+
+}

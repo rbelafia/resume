@@ -24,3 +24,10 @@ h1.about-name {
 .about-logo > svg {
     fill: white;
 }
+
+.about-contact-txt {
+    padding-left: 0.5em;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}

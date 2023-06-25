@@ -63,6 +63,7 @@ ul.experience-tags {
     padding-right: 0.5em;
     margin-right:0.5em;
     text-align: left;
+    font-weight: normal;
 }
 
 .experience-location {

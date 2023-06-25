@@ -1,8 +1,9 @@
-import React, {MutableRefObject} from "react";
+import React, {MutableRefObject, useContext} from "react";
 import "./Skills.css"
 import {GB, FR} from "country-flag-icons/react/3x2";
 import {ES} from "country-flag-icons/react/3x2";
 import Icons from "../icons/Icons";
+import {LangContext} from "../App";
 
 
 interface SubSkill {
@@ -43,7 +44,7 @@ function SkillsAux({title, skills}: {title: string, skills: Skill[]}) {
         </div>
     </>
 }
-const technicalSkills: Skill[] = [
+const englishTechnicalSkills: Skill[] = [
     {
         skill: "Development",
         subSkills: [
@@ -197,20 +198,287 @@ const technicalSkills: Skill[] = [
         ]
     }
 ]
+const frenchTechnicalSkills: Skill[] = [
+    {
+        skill: "Développement",
+        subSkills: [
+            {
+                subSkill: "Principaux langages de programmation",
+                tools: [
+                    "Python",
+                    "Java",
+                    "JavaScript",
+                    "TypeScript"
+                ]
+            } ,
+            {
+                subSkill: "Autres lanagages de programmation",
+                tools: [
+                    "C",
+                    "C++",
+                    "PHP",
+                    "Bash",
+                    "Ruby",
+                    "R"
+                ]
+            },
+            {
+                subSkill: "Environement de développement",
+                tools: [
+                    "Git",
+                    "Linux",
+                    "Jetbrains suite",
+                    "Visual Studio Code",
+                    "Eclipse"
+                ]
+            },
+            {
+                subSkill: "Data Analysis",
+                tools: [
+                    "Numpy",
+                    "Pandas",
+                    "Matplotlib",
+                    "Jupyter Notebook",
+                ]
+            }
+        ]
+    },
+    {
+        skill: "Web",
+        subSkills: [
+            {
+                subSkill: "Frameworks web",
+                tools: [
+                    "Quarkus",
+                    "Spring Boot",
+                    "Django",
+                    "Fast API"
+                ]
+            } ,
+            {
+                subSkill: "Front-end",
+                tools: [
+                    "React",
+                    "Angular"
+                ]
+            },
+            {
+                subSkill: "API",
+                tools: [
+                    "Rest",
+                    "GraphQL"
+                ]
+            },
+            {
+                subSkill: "Bases de données",
+                tools: [
+                    "MySQL",
+                    "MariaDB",
+                    "SQLite",
+                    "Postegresql"
+                ]
+            }
+        ]
+    },
+    {
+        skill: "Vérification & Validation",
+        subSkills: [
+            {
+                subSkill: "Test unitaires",
+                tools: [
+                    "JUnit",
+                    "PHP Unit",
+                    "Jest"
+                ]
+            },
+            {
+                subSkill: "Test end-to-end",
+                tools: [
+                    "Selenium",
+                    "Cypress"
+                ]
+            },
+            {
+                subSkill: "Analyse statique",
+                tools: [
+                    "PMD",
+                    "Pylint",
+                    "Checkstyle"
+                ]
+            } ,
+            {
+                subSkill: "Mutation testing",
+                tools: [
+                    "PIT"
+                ]
+            }
+        ]
+    },
+    {
+        skill: "DevOps",
+        subSkills: [
+            {
+                subSkill: "Containerisation / Orchestration",
+                tools: [
+                    "Docker / Docker Compose",
+                    "Kubernetes",
+                ]
+            },
+            {
+                subSkill: "CI / CD",
+                tools: [
+                    "Gitlab CI",
+                    "GitHub Actions",
+                    "Jenkins",
+                    "Circle CI"
+                ]
+            },
+            {
+                subSkill: "Monitoring",
+                tools: [
+                    "Sonarqube",
+                    "Prometheus",
+                    "Grafana"
+                ]
+            },
+            {
+                subSkill: "Cloud Computing / Infrastructure As Code",
+                tools: [
+                    "Amazon Web Services",
+                    "Terraform",
+                    "Ansible"
+                ]
+            },
+        ]
+    }
+]
+
+
+const englishContext = {
+    title: "Skills",
+    workExperiences: {
+        title: "IT skills",
+        skills: englishTechnicalSkills
+    },
+    otherExperiences: {
+        title: "Other skills",
+        music: {
+            title: "Music production",
+            subSkills: [
+                {
+                    subSkill: "Digital Audio Workstations",
+                    tools: [
+                        "Ableton",
+                        "Pro tools",
+                    ]
+                }
+            ]
+        },
+        languages: {
+            title: "Languages",
+            languages: [
+            {
+                language: "French",
+                level: "Native speaker",
+                details: [],
+                iconLang: "french"
+            },
+            {
+                language: "English",
+                level: "Level C1",
+                details: [
+                    "TOEIC obtained in 2021",
+                    "TOEFL IBT obtained in 2019"
+                ],
+                iconLang: "english"
+            },
+            {
+                language: "Spanish",
+                level: "Level B1",
+                details: [],
+                iconLang: "spanish"
+            }
+        ]}
+    }
+}
+
+const frenchContext = {
+    title: "Compétences",
+    workExperiences: {
+        title: "Compétences informatique",
+        skills: frenchTechnicalSkills
+    },
+    otherExperiences: {
+        title: "Autre compétences",
+        music: {
+            title: "Production musicale",
+            subSkills: [
+                {
+                    subSkill: "Digital Audio Workstations",
+                    tools: [
+                        "Ableton",
+                        "Pro tools",
+                    ]
+                }
+            ]
+        },
+        languages: {
+            title: "Langues",
+            languages: [
+                {
+                    language: "Français",
+                    level: "Natif",
+                    details: [],
+                    iconLang: "french"
+                },
+                {
+                    language: "Anglais",
+                    level: "Niveau C1",
+                    details: [
+                        "TOEIC obtenu en 2021",
+                        "TOEFL IBT obtenu en 2019"
+                    ],
+                    iconLang: "english"
+                },
+                {
+                    language: "Espagnol",
+                    level: "Niveau B1",
+                    details: [],
+                    iconLang: "spanish"
+                }
+            ]
+
+        }
+    }
+}
+
+const FindFlags = ({languageName}: {languageName: string}) => {
+    const res = {
+        "french": () => <FR title="French"/>,
+        "english": () => <GB title="English"/>,
+        "spanish": () => <ES title="Spansih"/>
+    }[languageName]
+    return res === undefined ? <></> : res()
+}
 function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undefined>}) {
+    const lang = useContext(LangContext)
+
+    const context = lang === "French" ? frenchContext : englishContext
+
+
     const ref = reference.current === undefined ? reference : reference as MutableRefObject<HTMLDivElement>
     // @ts-ignore
     return <section ref={ref} className="skills">
-        <h1>Skills</h1>
+        <h1>{context.title}</h1>
         <div>
-            {<SkillsAux title={"Technical skills"} skills={technicalSkills}/>}
-            <h2 style={{marginTop: "1em"}}>Other skills</h2>
+            {<SkillsAux title={context.workExperiences.title} skills={context.workExperiences.skills}/>}
+            <h2 style={{marginTop: "1em"}}>{context.otherExperiences.title}</h2>
             <div className="skills-divs">
                 <div className="skills-div">
-                    <h3 className="skill-name">Music production</h3>
+                    <h3 className="skill-name">{context.otherExperiences.music.title}</h3>
                     <div className="skill-tools">
                         <div className="skills-one dot">
-                            <h4 className="subskill">Digital audio workstations</h4>
+                            <h4 className="subskill">{context.otherExperiences.music.subSkills[0].subSkill}</h4>
                             <ul>
                                 <Icons toolName={"Ableton"}/>
                                 <Icons toolName={"Pro tools"}/>
@@ -219,38 +487,25 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
                     </div>
                 </div>
                 <div className="skills-div">
-                    <h3 className="skill-name">Languages</h3>
+                    <h3 className="skill-name">{context.otherExperiences.languages.title}</h3>
                     <div className="skill-tools">
-                        <div className="skills-one">
-                            <div className="skills-language">
-                                <div className="icon-country">
-                                    <FR title="French"/>
+                        {
+                            context.otherExperiences.languages.languages.map(language => (
+                                <div className="skills-one">
+                                    <div style={{display: "flex", flexDirection: "row"}}>
+                                        <div className="icon-country">
+                                            <FindFlags languageName={language.iconLang}></FindFlags>
+                                        </div>
+                                        <h4><span style={{fontWeight: "bold"}}>{language.language}</span> - {language.level}</h4>
+                                    </div>
+                                    <ul>
+                                        {language.details.map((detail) => (
+                                            <li className="skills-language-detail">{detail}</li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <h4 className="skills-language-sub">
-                                    <span style={{fontWeight: "bold"}}>French</span> - Native speaker
-                                </h4>
-                            </div>
-                        </div>
-                        <div className="skills-one">
-                            <div style={{display: "flex", flexDirection: "row"}}>
-                                <div className="icon-country">
-                                    <GB title="English"/>
-                                </div>
-                                <h4><span style={{fontWeight: "bold"}}>English</span> - Level C1</h4>
-                            </div>
-                            <ul>
-                                <li style={{fontStyle: "italic"}}>TOEIC obtained in 2021</li>
-                                <li style={{fontStyle: "italic"}}>TOEFL IBT obtained in 2019</li>
-                            </ul>
-                        </div>
-                        <div className="skills-one">
-                            <div style={{display: "flex", flexDirection: "row"}}>
-                                <div className="icon-country">
-                                    <ES title="Spanish"/>
-                                </div>
-                                <h4><span style={{fontWeight: "bold"}}>Spanish</span> - Level B1</h4>
-                            </div>
-                        </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
