@@ -1,0 +1,58 @@
+.education {
+
+}
+
+.education-info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+}
+
+.education-date {
+    padding-right: 1em;
+    width: 5em;
+    text-align: right;
+}
+
+.education-details {
+    border-left: 1px solid black;
+    padding-left: 1em;
+    width: 50em;
+}
+
+h3.education-title {
+    margin: 0;
+}
+
+.education-location {
+    color: #20455a;
+}
+ul.education-topics {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.education-topic {
+    margin-right: 0.5em;
+    background-color: #418ab3;
+    color: white;
+    padding: 0.4em;
+    border-radius: 1em;
+    font-weight: bold;
+    margin-bottom: 0.2em;
+
+}
+
+.education-logo {
+    height: 1.5em;
+    margin-left: 0.5em;
+}
+
+.education-title-container {
+    display: flex;
+    flex-direction: row;
+}

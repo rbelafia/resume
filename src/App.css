@@ -1,0 +1,84 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: white;
+}
+
+#root {
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  background-color: #20455a;
+  width: 10em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7em;
+
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: scroll;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.app-main > section {
+  color: black;
+  border-top: solid 1px #20455a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  min-height: 100vh;
+  font-size: 1.5em;
+  box-sizing: border-box;
+  padding: 3em;
+  flex-shrink: 0;
+}
+
+.app-main > section > h1 {
+  margin-bottom: 0.5em;
+}
+
+ul.nav-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.nav-list > li {
+  cursor: pointer;
+  color: #d7e7f0;
+  opacity: 80%;
+}
+
+ul.nav-list > li:hover {
+  opacity: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h4 {
+  font-weight: normal;
+}
+
+.me-container > img {
+  width: 5em;
+  border: 0.1em solid #418ab3;
+}

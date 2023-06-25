@@ -1,0 +1,73 @@
+.skills {
+}
+
+.skills > div {
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+
+.skills-divs {
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-gap: 1em;
+}
+
+.skills-div {
+    color: black;
+}
+
+.skills-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    color: #20455a;
+    margin-top: 0.2em;
+    padding: 0.2em 0.5em;
+}
+
+.skills-one:hover {
+    background-color: rgba(216, 231, 240, 0.5);
+}
+
+.skills-one:hover > h4 {
+    font-weight: bold;
+}
+
+.skills-one > ul {
+    margin: 0 0 0 0;
+}
+
+.skills-one.dot > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+
+}
+
+
+li.skills-tool > svg {
+    margin-right: 0.3em;
+    fill: #20455a;
+}
+
+li.skills-tool > svg:hover {
+    filter: opacity(50%);
+}
+
+.skill-name {
+    background-color: #d7e7f0;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    text-transform: uppercase;
+}
+
+.skill-tools {
+}
+
+.icon-country {
+    width: 1.2em;
+    margin-right: 0.5em;
+}
+
