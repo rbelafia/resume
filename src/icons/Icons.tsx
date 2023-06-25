@@ -9,7 +9,6 @@ import {
     SiC,
     SiCircleci,
     SiCplusplus,
-    SiCurl,
     SiCypress,
     SiDjango,
     SiDocker,
@@ -51,7 +50,7 @@ import {
 } from "react-icons/si";
 import {VscTerminalBash} from "react-icons/vsc";
 import {DiRuby} from "react-icons/di";
-import {TbBrandPython, TbTestPipe} from "react-icons/tb";
+import {TbBrandPython} from "react-icons/tb";
 import {IoPieChart} from "react-icons/io5";
 import {TiPencil} from "react-icons/ti";
 import {LuDna} from "react-icons/lu";
