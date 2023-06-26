@@ -8,7 +8,7 @@ import Skills from "./skills/Skills";
 import {FR, GB} from "country-flag-icons/react/3x2";
 
 
-import {isMobile, useMobileOrientation} from "react-device-detect";
+import {isMobile} from "react-device-detect";
 import {SlMenu} from "react-icons/sl";
 export const LangContext = createContext<"French" | "English">("English");
 
@@ -42,7 +42,8 @@ function App() {
     // @ts-ignore
     return <>
         {
-                <nav className={`app-nav${(isMobile && !showNav) ? ' hide' : ''}`}>
+            (!isMobile || showNav) &&
+                <nav className={`app-nav`}>
                     {
                         (!isMobile) &&
                             <div className="me-container">
@@ -80,7 +81,7 @@ function App() {
         }
 
         <LangContext.Provider value={lang} >
-            <main className={`app-main${(isMobile && !showNav) ? ' hide' : ''}`}>
+            <main className={`app-main`}>
                 {
                     isMobile && <div className="app-menu-container" onClick={() => setShowNav(prevState => !prevState)}>
                         <SlMenu/>

@@ -13,6 +13,7 @@ html, body {
   justify-content: flex-start;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 nav.app-nav {
@@ -94,12 +95,7 @@ ul.nav-list {
     display: grid;
     width: 75%;
     border-right: 1em #122733 solid;
-    transition: transform 0.2s;
     grid-template-rows: 1fr min-content;
-  }
-
-  nav.app-nav.hide {
-    transform: translateX(calc(-100%));
   }
 
   ul.nav-list {
@@ -114,10 +110,6 @@ ul.nav-list {
 
   .app-main {
     transition: transform 0.2s;
-  }
-
-  .app-main.hide {
-    transform: translateX(calc(-88.5%));
   }
 
   .app-submain > section {
