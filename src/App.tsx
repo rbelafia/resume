@@ -93,8 +93,11 @@ function App() {
                 }
                 <article className="app-submain"  onClick={() => setShowNav(false)}>
                     <About reference={aboutRef}/>
+                    <hr/>
                     <Skills reference={skillsRef}/>
+                    <hr/>
                     <Experience reference={experienceRef}/>
+                    <hr/>
                     <Education reference={educationRef}/>
                 </article>
 

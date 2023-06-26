@@ -64,11 +64,11 @@ ul.nav-list {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  color: #343a40;
 }
 
 .app-submain > section {
   color: #343a40;
-  border-top: solid 1px #20455a;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,10 +79,6 @@ ul.nav-list {
   box-sizing: border-box;
   padding: 3em;
   flex-shrink: 0;
-}
-
-.app-submain > section:first-child {
-  border-top: none;
 }
 
 .app-submain > section > h1 {

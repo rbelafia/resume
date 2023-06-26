@@ -223,7 +223,7 @@ function Experience({reference}: {reference: MutableRefObject<HTMLDivElement | u
                                         {description.map(line => <li>{line}</li>)}
                                     </ul>
                             }
-
+                            <hr style={{color: "transparent"}}/>
                             <ul className="experience-tags">
                                 {tags.map(tag => <li className="experience-tag">{tag}</li>)}
                             </ul>

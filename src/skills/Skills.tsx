@@ -164,7 +164,7 @@ const englishTechnicalSkills: Skill[] = [
         skill: "DevOps",
         subSkills: [
             {
-                subSkill: "Containerization / orchestration",
+                subSkill: "Containerization / Orchestration",
                 tools: [
                     "Docker / Docker Compose",
                     "Kubernetes",
@@ -212,7 +212,7 @@ const frenchTechnicalSkills: Skill[] = [
                 ]
             } ,
             {
-                subSkill: "Autres lanagages de programmation",
+                subSkill: "Autres langages de programmation",
                 tools: [
                     "C",
                     "C++",
@@ -223,7 +223,7 @@ const frenchTechnicalSkills: Skill[] = [
                 ]
             },
             {
-                subSkill: "environnement de développement",
+                subSkill: "Environnement de développement",
                 tools: [
                     "Git",
                     "Linux",
