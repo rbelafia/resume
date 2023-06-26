@@ -33,10 +33,12 @@ function About({reference}: {reference: MutableRefObject<HTMLDivElement | undefi
     // @ts-ignore
     return <section className="about" ref={ref}>
         <h1 className="about-name">{name}</h1>
-        <a className="about-contact" href={`mailto:${mail}`}>
+        <div className="about-contact" >
             <FaRegEnvelope fill="black"/>
-            <span className="about-contact-txt">{about.contactMe}</span>
-        </a>
+            <address>
+                <a href={`mailto:${mail}`} className="about-contact-txt">{about.contactMe}</a>
+            </address>
+        </div>
         <p>
             {
                 about.presentation.split('\n').map((line, index) => <>
@@ -45,13 +47,13 @@ function About({reference}: {reference: MutableRefObject<HTMLDivElement | undefi
                 </>)
             }
         </p>
-        <div style={{display: "flex", flexDirection: "row"}}>
+        <address style={{display: "flex", flexDirection: "row"}}>
             <a className="about-logo" href="https://www.linkedin.com/in/romain-belafia/">
                 <TfiLinkedin/>
             </a>
             <a className="about-logo" href="https://github.com/rbelafia"
                style={{marginLeft: "0.5em"}}><SiGithub/></a>
-        </div>
+        </address>
 
     </section>
 }

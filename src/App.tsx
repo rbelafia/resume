@@ -87,16 +87,16 @@ function App() {
             <main className="app-main">
                 {
                     isMobile && (
-                        <div className={`app-menu-container${showNav ? ' shown' : ''}`} onClick={() => setShowNav(prevState => !prevState)}>
+                        <aside className={`app-menu-container${showNav ? ' shown' : ''}`} onClick={() => setShowNav(prevState => !prevState)}>
                         <SlMenu/>
-                    </div>)
+                    </aside>)
                 }
-                <div className="app-submain"  onClick={() => setShowNav(false)}>
+                <article className="app-submain"  onClick={() => setShowNav(false)}>
                     <About reference={aboutRef}/>
                     <Skills reference={skillsRef}/>
                     <Experience reference={experienceRef}/>
                     <Education reference={educationRef}/>
-                </div>
+                </article>
 
             </main>
         </LangContext.Provider>

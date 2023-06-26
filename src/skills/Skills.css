@@ -85,6 +85,7 @@ li.skills-tool > svg:hover {
 
 .subskill {
     white-space: nowrap;
+    font-weight: normal;
 }
 
 .skills-language {

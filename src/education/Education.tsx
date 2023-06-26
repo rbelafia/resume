@@ -109,32 +109,30 @@ function Education({reference}: {reference: MutableRefObject<HTMLDivElement | un
     const context = lang === "French" ? frenchContext : englishContext
     // @ts-ignore
     return <section ref={ref} className="education">
-        <h1>{context.title}</h1>
+        <h2>{context.title}</h2>
         {
             context.infos.map(({date, description, location, title, topics, logoName}) => (
                 <div className="education-info">
-
                         <div className="education-details">
                             <div className="education-title-container">
-                                <h2>
+                                <h3>
                                     <span className="education-date">
                                         {
                                             typeof date === "number" ?
-                                                <span>{date}</span> :
-                                                <span>{date[0]} – {date[1]}</span>
+                                                <>{date} </> :
+                                                <>{date[0]} – {date[1]} </>
                                         }
                                     </span>
                                     <span className="education-title">{title}</span>
-
-                                </h2>
+                                </h3>
 
                                 <img className="education-logo" src={GetLogo(logoName)} alt="INSA Rennes logo"/>
                             </div>
                             <div className="education-sub-details">
-                                <h3 className="education-location">
+                                <div className="education-location">
                                     <MdLocationOn/>
                                     <span>{location}</span>
-                                </h3>
+                                </div>
                                 <p className="education-description">{description}</p>
 
                                 <ul className="education-topics">

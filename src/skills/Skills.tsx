@@ -19,17 +19,17 @@ interface Skill {
 
 function SkillsAux({title, skills}: {title: string, skills: Skill[]}) {
     return <>
-        <h2>{title}</h2>
+        <h3>{title}</h3>
 
         <div className="skills-divs">
             {
                 skills.map(({skill, subSkills}) => (
                     <div className="skills-div">
-                        <h3 className="skill-name">{skill.toUpperCase()}</h3>
+                        <h4 className="skill-name">{skill.toUpperCase()}</h4>
                         <div className="skill-tools">
                             {subSkills.map(({subSkill, tools}) => (
                                 <div className="skills-one dot">
-                                    <h4 className="subskill">{subSkill}</h4>
+                                    <h5 className="subskill">{subSkill}</h5>
                                     <ul>
                                         {
                                             tools.map((tool) => <Icons toolName={tool}/>)
@@ -469,16 +469,16 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
     const ref = reference.current === undefined ? reference : reference as MutableRefObject<HTMLDivElement>
     // @ts-ignore
     return <section ref={ref} className="skills">
-        <h1>{context.title}</h1>
+        <h2>{context.title}</h2>
         <div>
             {<SkillsAux title={context.workExperiences.title} skills={context.workExperiences.skills}/>}
-            <h2 style={{marginTop: "1em"}}>{context.otherExperiences.title}</h2>
+            <h3 style={{marginTop: "1em"}}>{context.otherExperiences.title}</h3>
             <div className="skills-divs">
                 <div className="skills-div">
-                    <h3 className="skill-name">{context.otherExperiences.music.title}</h3>
+                    <h4 className="skill-name">{context.otherExperiences.music.title}</h4>
                     <div className="skill-tools">
                         <div className="skills-one dot">
-                            <h4 className="subskill">{context.otherExperiences.music.subSkills[0].subSkill}</h4>
+                            <h5 className="subskill">{context.otherExperiences.music.subSkills[0].subSkill}</h5>
                             <ul>
                                 <Icons toolName={"Ableton"}/>
                                 <Icons toolName={"Pro tools"}/>
@@ -487,7 +487,7 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
                     </div>
                 </div>
                 <div className="skills-div">
-                    <h3 className="skill-name">{context.otherExperiences.languages.title}</h3>
+                    <h4 className="skill-name">{context.otherExperiences.languages.title}</h4>
                     <div className="skill-tools">
                         {
                             context.otherExperiences.languages.languages.map(language => (
@@ -496,7 +496,7 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
                                         <div className="icon-country">
                                             <FindFlags languageName={language.iconLang}></FindFlags>
                                         </div>
-                                        <h4><span style={{fontWeight: "bold"}}>{language.language}</span> - {language.level}</h4>
+                                        <h5><span style={{fontWeight: "bold"}}>{language.language}</span> - {language.level}</h5>
                                     </div>
                                     <ul>
                                         {language.details.map((detail) => (
