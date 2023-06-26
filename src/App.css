@@ -18,7 +18,8 @@ html, body {
 nav.app-nav {
   background-color: #20455a;
   padding: 1em;
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr min-content;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -29,8 +30,21 @@ nav.app-nav {
 ul.nav-list {
    list-style: none;
    padding-left: 0;
-  margin: 0;
+  margin: 2em 0 0;
   font-size: 1.7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 .me-container > img {
@@ -78,10 +92,10 @@ ul.nav-list {
 
   nav.app-nav {
     display: grid;
-    grid-template-rows: auto min-content;
     width: 75%;
     border-right: 1em #122733 solid;
     transition: transform 0.2s;
+    grid-template-rows: 1fr min-content;
   }
 
   nav.app-nav.hide {
@@ -90,6 +104,7 @@ ul.nav-list {
 
   ul.nav-list {
     margin-right: 1em;
+    justify-content: center;
   }
 
   ul.nav-list > li {
@@ -113,7 +128,7 @@ ul.nav-list {
 ul.nav-list > li {
   cursor: pointer;
   color: #d7e7f0;
-  opacity: 80%;
+  opacity: 70%;
 }
 
 ul.nav-list > li:hover {
@@ -142,4 +157,9 @@ h4 {
   padding: 1em;
   display: flex;
 
+}
+
+.app-icon-country {
+  font-size: 2em;
+  margin-top: 3em;
 }
