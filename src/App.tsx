@@ -70,9 +70,12 @@ function App() {
                             educationRef?.current?.scrollIntoView()
                         }}>{context.links.education}</li>
                     </ul>
-                    <div className="app-icon-country" onClick={() => setLang(prevState => {
-                        return prevState === "French" ? "English" : "French";
-                    })}>
+                    <div className="app-icon-country" onClick={() => {
+                        setLang(prevState => {
+                            return prevState === "French" ? "English" : "French";
+                        });
+                        setShowNav(false);
+                    }}>
                         {
                             lang === "English" ?  <FR title="Français"/> : <GB title="English"/>
                         }
@@ -81,13 +84,14 @@ function App() {
         }
 
         <LangContext.Provider value={lang} >
-            <main className={`app-main`}>
+            <main className="app-main">
                 {
-                    isMobile && <div className="app-menu-container" onClick={() => setShowNav(prevState => !prevState)}>
+                    isMobile && (
+                        <div className={`app-menu-container${showNav ? ' shown' : ''}`} onClick={() => setShowNav(prevState => !prevState)}>
                         <SlMenu/>
-                    </div>
+                    </div>)
                 }
-                <div className="app-submain">
+                <div className="app-submain"  onClick={() => setShowNav(false)}>
                     <About reference={aboutRef}/>
                     <Skills reference={skillsRef}/>
                     <Experience reference={experienceRef}/>

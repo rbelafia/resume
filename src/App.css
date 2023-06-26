@@ -95,6 +95,7 @@ ul.nav-list {
     display: grid;
     width: 75%;
     border-right: 1em #122733 solid;
+    border-top: 1px solid #122733;
     grid-template-rows: 1fr min-content;
   }
 
@@ -144,11 +145,15 @@ h4 {
 }
 
 .app-menu-container {
+  border-top: 1px #20455a solid;
   background-color: #20455a;
   color: white;
   padding: 1em;
   display: flex;
+}
 
+.app-menu-container.shown {
+  border-top: 1px #122733 solid;
 }
 
 .app-icon-country {
