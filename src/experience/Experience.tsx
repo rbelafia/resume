@@ -198,7 +198,7 @@ function Experience({reference}: {reference: MutableRefObject<HTMLDivElement | u
             context.experiences
                 .filter((value, index) => showMore || (index < 2))
                 .map(({description, location, title, tools, date, tags}) => (
-                <article className="experience">
+                <div className="experience">
                     <h3 className="experience-title-container">
                         <span className="experience-date">
                             {
@@ -230,7 +230,7 @@ function Experience({reference}: {reference: MutableRefObject<HTMLDivElement | u
                             {tools.map(tool => <Icons toolName={tool}/>)}
                         </ul>
                     </div>
-                </article>
+                </div>
             ))
         }
         <div className="show-more-container">

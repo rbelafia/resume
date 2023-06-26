@@ -112,7 +112,7 @@ function Education({reference}: {reference: MutableRefObject<HTMLDivElement | un
         <h2>{context.title}</h2>
         {
             context.infos.map(({date, description, location, title, topics, logoName}) => (
-                <article className="education-info">
+                <div className="education-info">
                     <div className="education-title-container">
                         <h3>
                             <span className="education-date">
@@ -139,7 +139,7 @@ function Education({reference}: {reference: MutableRefObject<HTMLDivElement | un
                         </ul>
                     </div>
 
-                </article>
+                </div>
             ))
         }
 
