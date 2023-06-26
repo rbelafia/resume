@@ -15,24 +15,23 @@ html, body {
   width: 100%;
 }
 
-nav {
+nav.app-nav {
   background-color: #20455a;
   padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.7em;
   flex-shrink: 0;
-  width: 10em;
-
+  width: 15em;
 }
 
 ul.nav-list {
    list-style: none;
    padding-left: 0;
   margin: 0;
- }
+  font-size: 1.7em;
+}
 
 .me-container > img {
   width: 5em;
@@ -42,12 +41,17 @@ ul.nav-list {
 
 .app-main {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  overflow-y: scroll;
-
 }
 
-.app-main > section {
+.app-submain {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.app-submain > section {
   color: #343a40;
   border-top: solid 1px #20455a;
   display: flex;
@@ -62,30 +66,29 @@ ul.nav-list {
   flex-shrink: 0;
 }
 
-.app-main > section:first-child {
+.app-submain > section:first-child {
   border-top: none;
 }
 
-.app-main > section > h1 {
+.app-submain > section > h1 {
   margin-bottom: 0.5em;
 }
 
 @media only screen and (max-width: 480px) {
-  #root {
-    flex-flow: column;
+
+  nav.app-nav {
+    display: grid;
+    grid-template-rows: auto min-content;
+    width: 75%;
+    border-right: 1em #122733 solid;
+    transition: transform 0.2s;
   }
 
-  nav {
-    flex-direction: row;
-    flex-shrink: 0;
-    overflow-x: scroll;
-    flex-wrap: nowrap;
-    width: auto;
+  nav.app-nav.hide {
+    transform: translateX(calc(-100%));
   }
 
   ul.nav-list {
-    display: flex;
-    flex-direction: row;
     margin-right: 1em;
   }
 
@@ -94,14 +97,15 @@ ul.nav-list {
     white-space: nowrap;
   }
 
-  .me-container > img {
-    height: 0;
-    width: 0;
-    border: none;
+  .app-main {
+    transition: transform 0.2s;
   }
 
+  .app-main.hide {
+    transform: translateX(calc(-88.5%));
+  }
 
-  .app-main > section {
+  .app-submain > section {
     padding: 1em;
   }
 }
@@ -129,5 +133,13 @@ h4 {
 .app-icon-country > svg {
   border: solid 2px white;
   width: 1.2em;
+
+}
+
+.app-menu-container {
+  background-color: #20455a;
+  color: white;
+  padding: 1em;
+  display: flex;
 
 }
