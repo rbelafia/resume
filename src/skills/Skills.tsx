@@ -25,7 +25,7 @@ function SkillsAux({title, skills}: {title: string, skills: Skill[]}) {
             {
                 skills.map(({skill, subSkills}) => (
                     <div className="skills-div">
-                        <h4 className="skill-name">{skill.toUpperCase()}</h4>
+                        <h4 className="skill-name">{skill}</h4>
                         <div className="skill-tools">
                             {subSkills.map(({subSkill, tools}) => (
                                 <div className="skills-one dot">

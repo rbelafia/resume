@@ -112,36 +112,34 @@ function Education({reference}: {reference: MutableRefObject<HTMLDivElement | un
         <h2>{context.title}</h2>
         {
             context.infos.map(({date, description, location, title, topics, logoName}) => (
-                <div className="education-info">
-                        <div className="education-details">
-                            <div className="education-title-container">
-                                <h3>
-                                    <span className="education-date">
-                                        {
-                                            typeof date === "number" ?
-                                                <>{date} </> :
-                                                <>{date[0]} – {date[1]} </>
-                                        }
-                                    </span>
-                                    <span className="education-title">{title}</span>
-                                </h3>
+                <article className="education-info">
+                    <div className="education-title-container">
+                        <h3>
+                            <span className="education-date">
+                                {
+                                    typeof date === "number" ?
+                                        <>{date} </> :
+                                        <>{date[0]} – {date[1]} </>
+                                }
+                            </span>
+                            <span className="education-title">{title}</span>
+                        </h3>
 
-                                <img className="education-logo" src={GetLogo(logoName)} alt="INSA Rennes logo"/>
-                            </div>
-                            <div className="education-sub-details">
-                                <div className="education-location">
-                                    <MdLocationOn/>
-                                    <span>{location}</span>
-                                </div>
-                                <p className="education-description">{description}</p>
-
-                                <ul className="education-topics">
-                                    {topics.map(tag => <li className="education-topic">{tag}</li>)}
-                                </ul>
-                            </div>
-
+                        <img className="education-logo" src={GetLogo(logoName)} alt="INSA Rennes logo"/>
+                    </div>
+                    <div className="education-sub-details">
+                        <div className="education-location">
+                            <MdLocationOn/>
+                            <span>{location}</span>
                         </div>
-                </div>
+                        <p className="education-description">{description}</p>
+
+                        <ul className="education-topics">
+                            {topics.map(tag => <li className="education-topic">{tag}</li>)}
+                        </ul>
+                    </div>
+
+                </article>
             ))
         }
 

@@ -4,8 +4,9 @@
 
 .education-info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 1em;
+    max-width: min(50em, 100%);
 }
 
 .education-date {
@@ -13,9 +14,7 @@
     font-weight: normal;
 }
 
-.education-details {
-    max-width: min(50em, 100%);
-}
+
 
 h3.education-title {
     margin: 0;
@@ -63,7 +62,7 @@ ul.education-topics {
 }
 
 .education-description {
-
+    text-justify: inter-character;
 }
 
 .education-sub-details {

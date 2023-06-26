@@ -198,47 +198,45 @@ function Experience({reference}: {reference: MutableRefObject<HTMLDivElement | u
             context.experiences
                 .filter((value, index) => showMore || (index < 2))
                 .map(({description, location, title, tools, date, tags}) => (
-                <div className="experience">
-                    <div className="experience-details">
-                        <h3 className="experience-title-container">
-                            <span className="experience-date">
-                                {
-                                    typeof date === "number" ?
-                                        <>{date} </> :
-                                        <>{date[0]} – {date[1]} </>
-                                }
-                            </span>
-                            <span className="experience-title">{title}</span>
-
-                        </h3>
-                        <div className="experience-subdetails">
-                            <div className="experience-location">
-                                <MdLocationOn/>
-                                <span>{location}</span>
-                            </div>
+                <article className="experience">
+                    <h3 className="experience-title-container">
+                        <span className="experience-date">
                             {
-                                typeof description === "string" ?
-                                    <p className="experience-description">{description}</p> :
-                                    <ul className="experience-description">
-                                        {description.map(line => <li>{line}</li>)}
-                                    </ul>
+                                typeof date === "number" ?
+                                    <>{date} </> :
+                                    <>{date[0]} – {date[1]} </>
                             }
-                            <hr style={{color: "transparent"}}/>
-                            <ul className="experience-tags">
-                                {tags.map(tag => <li className="experience-tag">{tag}</li>)}
-                            </ul>
-                            <ul className="experience-tools">
-                                {tools.map(tool => <Icons toolName={tool}/>)}
-                            </ul>
+                        </span>
+                        <span className="experience-title">{title}</span>
+
+                    </h3>
+                    <div className="experience-subdetails">
+                        <div className="experience-location">
+                            <MdLocationOn/>
+                            <span>{location}</span>
                         </div>
+
+                        {
+                            typeof description === "string" ?
+                                <p className="experience-description">{description}</p> :
+                                <ul className="experience-description">
+                                    {description.map(line => <li>{line}</li>)}
+                                </ul>
+                        }
+                        <ul className="experience-tags">
+                            {tags.map(tag => <li className="experience-tag">{tag}</li>)}
+                        </ul>
+                        <ul className="experience-tools">
+                            {tools.map(tool => <Icons toolName={tool}/>)}
+                        </ul>
                     </div>
-                </div>
+                </article>
             ))
         }
         <div className="show-more-container">
-            <div className="show-more-button" onClick={() => setShowMore(prevState => !prevState)}>
+            <button className="show-more-button" onClick={() => setShowMore(prevState => !prevState)}>
                 {showMore ? <span>{context.less}</span>:<span>{context.more}</span>}
-                </div>
+                </button>
         </div>
     </section>;
 }

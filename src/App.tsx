@@ -51,21 +51,21 @@ function App() {
                             </div>
                     }
                     <ul className="nav-list">
-                        <li onClick={() => {
+                        <li key="nav-0" onClick={() => {
                             setShowNav(false);
                             aboutRef?.current?.scrollIntoView()
                         }}>
                             {context.links.about}
                         </li>
-                        <li onClick={() => {
+                        <li key="nav-1" onClick={() => {
                             setShowNav(false);
                             skillsRef?.current?.scrollIntoView()
                         }}>{context.links.skills}</li>
-                        <li onClick={() => {
+                        <li key="nav-2" onClick={() => {
                             setShowNav(false);
                             experienceRef?.current?.scrollIntoView()
                         }}>{context.links.experience}</li>
-                        <li onClick={() => {
+                        <li key="nav-3" onClick={() => {
                             setShowNav(false);
                             educationRef?.current?.scrollIntoView()
                         }}>{context.links.education}</li>
