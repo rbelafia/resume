@@ -72,7 +72,7 @@ const frenchInfos: EducationInfo[] = [
     },
     {
         title: "Master recherche d'informatique en double diplôme",
-        location: "University de Rennes – INSA Rennes",
+        location: "Université de Rennes – INSA Rennes",
         description: "Durant la dernière année de mon cursus à l'INSA Rennes, j'ai suivi un master recherche en double diplôme avec l'Université de Rennes.",
         date: 2021,
         topics: [
