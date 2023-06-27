@@ -28,8 +28,9 @@ function About({reference}: {reference: MutableRefObject<HTMLDivElement | undefi
 
     const about = lang === "French" ? frenchAbout : englishAbout
 
-
     const ref = reference.current === undefined ? reference : reference as MutableRefObject<HTMLDivElement>
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return <section className="about" ref={ref}>
         <h1 className="about-name">{name}</h1>

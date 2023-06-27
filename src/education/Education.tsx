@@ -107,12 +107,14 @@ function Education({reference}: {reference: MutableRefObject<HTMLDivElement | un
     const lang = useContext(LangContext)
 
     const context = lang === "French" ? frenchContext : englishContext
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return <section ref={ref} className="education">
         <h2>{context.title}</h2>
         {
             context.infos.map(({date, description, location, title, topics, logoName}) => (
-                <div className="education-info">
+                <div key={title} className="education-info">
                     <div className="education-title-container">
                         <h3>
                             <span className="education-date">
@@ -135,7 +137,7 @@ function Education({reference}: {reference: MutableRefObject<HTMLDivElement | un
                         <p className="education-description">{description}</p>
 
                         <ul className="education-topics">
-                            {topics.map(tag => <li className="education-topic">{tag}</li>)}
+                            {topics.map(tag => <li key={tag} className="education-topic">{tag}</li>)}
                         </ul>
                     </div>
 

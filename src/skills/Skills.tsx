@@ -1,7 +1,6 @@
 import React, {MutableRefObject, useContext} from "react";
 import "./Skills.css"
-import {GB, FR} from "country-flag-icons/react/3x2";
-import {ES} from "country-flag-icons/react/3x2";
+import {GB, FR, ES} from "country-flag-icons/react/3x2";
 import Icons from "../icons/Icons";
 import {LangContext} from "../App";
 
@@ -24,15 +23,15 @@ function SkillsAux({title, skills}: {title: string, skills: Skill[]}) {
         <div className="skills-divs">
             {
                 skills.map(({skill, subSkills}) => (
-                    <div className="skills-div">
+                    <div key={skill} className="skills-div">
                         <h4 className="skill-name">{skill}</h4>
                         <div className="skill-tools">
                             {subSkills.map(({subSkill, tools}) => (
-                                <div className="skills-one dot">
+                                <div key={subSkill} className="skills-one dot">
                                     <h5 className="subskill">{subSkill}</h5>
                                     <ul>
                                         {
-                                            tools.map((tool) => <Icons toolName={tool}/>)
+                                            tools.map((tool) => <Icons key={tool} toolName={tool}/>)
                                         }
                                     </ul>
                                 </div>
@@ -465,8 +464,9 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
 
     const context = lang === "French" ? frenchContext : englishContext
 
-
     const ref = reference.current === undefined ? reference : reference as MutableRefObject<HTMLDivElement>
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return <section ref={ref} className="skills">
         <h2>{context.title}</h2>
@@ -491,7 +491,7 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
                     <div className="skill-tools">
                         {
                             context.otherExperiences.languages.languages.map(language => (
-                                <div className="skills-one">
+                                <div key={language.language} className="skills-one">
                                     <div style={{display: "flex", flexDirection: "row"}}>
                                         <div className="icon-country">
                                             <FindFlags languageName={language.iconLang}></FindFlags>
@@ -499,8 +499,8 @@ function Skills({reference}: {reference: MutableRefObject<HTMLDivElement | undef
                                         <h5><span style={{fontWeight: "bold"}}>{language.language}</span> - {language.level}</h5>
                                     </div>
                                     <ul>
-                                        {language.details.map((detail) => (
-                                            <li className="skills-language-detail">{detail}</li>
+                                        {language.details.map((detail, index) => (
+                                            <li key={`detail-${index}`} className="skills-language-detail">{detail}</li>
                                         ))}
                                     </ul>
                                 </div>

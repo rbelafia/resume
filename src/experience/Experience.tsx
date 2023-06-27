@@ -191,6 +191,7 @@ function Experience({reference}: {reference: MutableRefObject<HTMLDivElement | u
 
     const context = lang === "French" ? frenchContext : englishContext
     const ref = reference.current === undefined ? reference : reference as MutableRefObject<HTMLDivElement>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return <section ref={ref} className="experiences">
         <h2>{context.title}</h2>
@@ -198,40 +199,42 @@ function Experience({reference}: {reference: MutableRefObject<HTMLDivElement | u
             context.experiences
                 .filter((value, index) => showMore || (index < 2))
                 .map(({description, location, title, tools, date, tags}) => (
-                <div className="experience">
-                    <h3 className="experience-title-container">
-                        <span className="experience-date">
+                    <div key={title} className="experience">
+                        <h3 className="experience-title-container">
+                            <span className="experience-date">
+                                {
+                                    typeof date === "number" ?
+                                        <>{date} </> :
+                                        <>{date[0]} – {date[1]} </>
+                                }
+                            </span>
+                            <span className="experience-title">{title}</span>
+
+                        </h3>
+                        <div className="experience-subdetails">
+                            <div className="experience-location">
+                                <MdLocationOn/>
+                                <span>{location}</span>
+                            </div>
+
                             {
-                                typeof date === "number" ?
-                                    <>{date} </> :
-                                    <>{date[0]} – {date[1]} </>
+                                typeof description === "string" ?
+                                    <p className="experience-description">{description}</p> :
+                                    <ul className="experience-description">
+                                        {description.map((line, index) => (
+                                            <li key={`desc-${index}`}>{line}</li>
+                                        ))}
+                                    </ul>
                             }
-                        </span>
-                        <span className="experience-title">{title}</span>
-
-                    </h3>
-                    <div className="experience-subdetails">
-                        <div className="experience-location">
-                            <MdLocationOn/>
-                            <span>{location}</span>
+                            <ul className="experience-tags">
+                                {tags.map(tag => <li key={tag} className="experience-tag">{tag}</li>)}
+                            </ul>
+                            <ul className="experience-tools">
+                                {tools.map(tool => <Icons key={tool} toolName={tool}/>)}
+                            </ul>
                         </div>
-
-                        {
-                            typeof description === "string" ?
-                                <p className="experience-description">{description}</p> :
-                                <ul className="experience-description">
-                                    {description.map(line => <li>{line}</li>)}
-                                </ul>
-                        }
-                        <ul className="experience-tags">
-                            {tags.map(tag => <li className="experience-tag">{tag}</li>)}
-                        </ul>
-                        <ul className="experience-tools">
-                            {tools.map(tool => <Icons toolName={tool}/>)}
-                        </ul>
                     </div>
-                </div>
-            ))
+                ))
         }
         <div className="show-more-container">
             <button className="show-more-button" onClick={() => setShowMore(prevState => !prevState)}>

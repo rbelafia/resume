@@ -2,7 +2,6 @@ import React, {createContext, useRef, useState} from "react";
 import meCropped from "./assets/me_cropped.jpg";
 import "./App.css";
 import About from "./about/About";
-import Experience from "./experience/Experience";
 import Education from "./education/Education";
 import Skills from "./skills/Skills";
 import {FR, GB} from "country-flag-icons/react/3x2";
@@ -10,6 +9,7 @@ import {FR, GB} from "country-flag-icons/react/3x2";
 
 import {isMobile} from "react-device-detect";
 import {SlMenu} from "react-icons/sl";
+import Experience from "./experience/Experience";
 export const LangContext = createContext<"French" | "English">("English");
 
 const frenchContext = {
@@ -38,8 +38,44 @@ function App() {
     const aboutRef = useRef<HTMLDivElement>();
 
     const context = lang === "French" ? frenchContext : englishContext;
+    const handleLangClick = () => {
+        setLang(prevState => prevState === "French" ? "English" : "French");
+        setShowNav(false);
+    }
 
-    // @ts-ignore
+    const handleLangKeyDownRef = (event: React.KeyboardEvent) => {
+        if (event.key === "Enter") handleLangClick()
+    }
+
+    const handleRefClick = (ref: React.MutableRefObject<HTMLDivElement | undefined>) => () => {
+        setShowNav(false);
+        ref?.current?.scrollIntoView();
+    }
+
+    const handleKeyDownRef = (ref: React.MutableRefObject<HTMLDivElement | undefined>) => (event: React.KeyboardEvent) => {
+        if (event.key === "Enter") {
+            handleRefClick(ref)()
+        }
+    };
+
+    const linksRefs = [
+        {
+            name: context.links.about,
+            ref: aboutRef
+        },
+        {
+            name: context.links.skills,
+            ref: skillsRef
+        },
+        {
+            name: context.links.experience,
+            ref: experienceRef
+        },
+        {
+            name: context.links.education,
+            ref: educationRef
+        }
+    ]
     return <>
         {
             (!isMobile || showNav) &&
@@ -51,31 +87,25 @@ function App() {
                             </div>
                     }
                     <ul className="nav-list">
-                        <li key="nav-0" onClick={() => {
-                            setShowNav(false);
-                            aboutRef?.current?.scrollIntoView()
-                        }}>
-                            {context.links.about}
-                        </li>
-                        <li key="nav-1" onClick={() => {
-                            setShowNav(false);
-                            skillsRef?.current?.scrollIntoView()
-                        }}>{context.links.skills}</li>
-                        <li key="nav-2" onClick={() => {
-                            setShowNav(false);
-                            experienceRef?.current?.scrollIntoView()
-                        }}>{context.links.experience}</li>
-                        <li key="nav-3" onClick={() => {
-                            setShowNav(false);
-                            educationRef?.current?.scrollIntoView()
-                        }}>{context.links.education}</li>
+                        {
+                            linksRefs.map(({name, ref}) => (
+                                <li key={`${name}`}
+                                    role="link"
+                                    tabIndex={0}
+                                    onClick={handleRefClick(ref)}
+                                    onKeyDown={handleKeyDownRef(ref)}
+                                >
+                                    {name}
+                                </li
+                                >))
+                        }
                     </ul>
-                    <div className="app-icon-country" onClick={() => {
-                        setLang(prevState => {
-                            return prevState === "French" ? "English" : "French";
-                        });
-                        setShowNav(false);
-                    }}>
+                    <div role="link"
+                         tabIndex={0}
+                         className="app-icon-country"
+                         onClick={handleLangClick}
+                         onKeyDown={handleLangKeyDownRef}
+                    >
                         {
                             lang === "English" ?  <FR title="Français"/> : <GB title="English"/>
                         }
@@ -87,7 +117,7 @@ function App() {
             <main className="app-main">
                 {
                     isMobile && (
-                        <aside className={`app-menu-container${showNav ? ' shown' : ''}`} onClick={() => setShowNav(prevState => !prevState)}>
+                        <aside tabIndex={-1} className={`app-menu-container${showNav ? ' shown' : ''}`} onClick={() => setShowNav(prevState => !prevState)}>
                         <SlMenu/>
                     </aside>)
                 }
