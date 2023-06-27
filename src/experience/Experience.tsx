@@ -236,7 +236,7 @@ function Experience({reference}: {reference: MutableRefObject<HTMLDivElement | u
         <div className="show-more-container">
             <button className="show-more-button" onClick={() => setShowMore(prevState => !prevState)}>
                 {showMore ? <span>{context.less}</span>:<span>{context.more}</span>}
-                </button>
+            </button>
         </div>
     </section>;
 }
